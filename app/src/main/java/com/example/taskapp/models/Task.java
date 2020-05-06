@@ -6,8 +6,9 @@ public class Task implements Serializable {
     private String title;
     private String desc;
 
-    public Task(String title, String desc) {
+    public Task() {
     }
+
     public String getTitle() {
         return title;
     }

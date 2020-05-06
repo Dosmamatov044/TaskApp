@@ -10,12 +10,11 @@
     tools:context=".ui.onBoard.BoardFragment">
 
 
-
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="350dp"
         android:layout_height="200dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="40dp"
         android:src="@mipmap/ic_launcher"/>
 
     <TextView
@@ -26,15 +25,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAlignment="center"
-        android:layout_margin="25dp"
-        android:text="aidin" />
+        android:layout_margin="5dp"
+        android:text="A girl" />
 
     <TextView
         android:id="@+id/textDesc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="aidin"
-        android:textColor="#000000"
+        android:text="Friend"
+        android:textColor="#632323"
         android:textAlignment="center"
         android:textSize="35sp" />
 
@@ -44,9 +43,9 @@
         android:layout_height="wrap_content"
         android:text="Get Started"
         android:textColor="#FFFFFF"
-        android:visibility="invisible"
         android:background="#2E9FD1"
-        android:layout_marginTop="120dp"
         android:textSize="40sp" />
+
+
 
 </LinearLayout>

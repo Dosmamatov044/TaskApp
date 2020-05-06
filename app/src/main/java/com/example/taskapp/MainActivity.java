@@ -6,15 +6,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
 
-import com.example.taskapp.models.Task;
-import com.example.taskapp.ui.OnItemClickListener;
-import com.example.taskapp.ui.home.TaskAdapter;
 import com.example.taskapp.ui.onBoard.OnBoardActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -22,18 +19,16 @@ import androidx.navigation.ui.NavigationUI;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
-
-public class MainActivity extends AppCompatActivity{
+public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if(true){
+        if (true) {
             startActivity(new Intent(this, OnBoardActivity.class));
             finish();
             return;
@@ -45,7 +40,7 @@ public class MainActivity extends AppCompatActivity{
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               startActivityForResult(new Intent(MainActivity.this, FormActivity.class),100);
+                startActivityForResult(new Intent(MainActivity.this, FormActivity.class), 100);
             }
         });
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -79,12 +74,12 @@ public class MainActivity extends AppCompatActivity{
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(resultCode == RESULT_OK && requestCode == 100 && data != null){
-            Task task = (Task) data.getSerializableExtra("task");
-        }
+        Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment);
+        fragment.getChildFragmentManager().getFragments().get(0).onActivityResult(requestCode,resultCode,data);
     }
 
     public void exit_click(MenuItem item) {
         this.finish();
     }
+
 }

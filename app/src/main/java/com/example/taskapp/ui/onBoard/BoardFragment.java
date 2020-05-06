@@ -1,5 +1,6 @@
 package com.example.taskapp.ui.onBoard;
 
+
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -16,11 +17,8 @@ import android.widget.TextView;
 
 import com.example.taskapp.MainActivity;
 import com.example.taskapp.R;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-/**
- * A simple {@link Fragment} subclass.
- */
+
 public class BoardFragment extends Fragment {
 
     TextView textTitle, textDesc;
@@ -28,7 +26,7 @@ public class BoardFragment extends Fragment {
 
 
     public BoardFragment() {
-        // Required empty public constructor
+
     }
 
 
@@ -49,7 +47,7 @@ public class BoardFragment extends Fragment {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(onBoardActivity,MainActivity.class);
+                Intent intent = new Intent(onBoardActivity, MainActivity.class);
                 startActivity(intent);
                 onBoardActivity.finish();
             }
@@ -58,19 +56,21 @@ public class BoardFragment extends Fragment {
         int pos = getArguments().getInt("pos");
         switch (pos){
             case 0:
-                image.setImageResource(R.drawable.kitkat01);
-                textTitle.setText("Kitkat");
-                textDesc.setText("android 4.4");
+                image.setImageResource(R.drawable.oneph);
+                textTitle.setText("Hi");
+
+                button.setVisibility(View.GONE);
                 break;
             case 1:
-                image.setImageResource(R.drawable.nougat);
-                textTitle.setText("Oreo");
-                textDesc.setText("android 7");
+                image.setImageResource(R.drawable.twoph);
+                textTitle.setText("how are you");
+                ;
+                button.setVisibility(View.GONE);
                 break;
             case 2:
-                image.setImageResource(R.drawable.oreo2);
-                textTitle.setText("Nougat");
-                textDesc.setText("android 8.0");
+                image.setImageResource(R.drawable.threeph);
+                textTitle.setText("I am bad");
+
                 button.setVisibility(View.VISIBLE);
                 break;
         }
