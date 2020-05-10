@@ -6,7 +6,10 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
+
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -36,11 +39,20 @@ public class OnBoardActivity extends AppCompatActivity {
         fab_skip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                saveIsShown();
                 startActivity(new Intent(OnBoardActivity.this, MainActivity.class));
                 finish();
             }
         });
     }
+
+    private void saveIsShown() {
+        SharedPreferences preferences=OnBoardActivity.this.getSharedPreferences("settings", Context.MODE_PRIVATE);
+        preferences.edit().putBoolean("isShown",true).apply();
+
+    }
+
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
         public SectionsPagerAdapter(@NonNull FragmentManager fm) {

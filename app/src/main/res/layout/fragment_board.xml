@@ -7,8 +7,12 @@
     android:padding="32dp"
     android:orientation="vertical"
     android:gravity="center_horizontal"
-    tools:context=".ui.onBoard.BoardFragment">
+    tools:context=".ui.onBoard.BoardFragment"
 
+    android:id="@+id/rr"
+    android:background="@color/colorAccent"
+
+    >
 
     <ImageView
         android:id="@+id/imageView"
@@ -26,14 +30,16 @@
         android:layout_height="wrap_content"
         android:textAlignment="center"
         android:layout_margin="5dp"
-        android:text="A girl" />
+        android:text="A girl"
+        android:background="@color/colorAccent"
+        />
 
     <TextView
         android:id="@+id/textDesc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Friend"
-        android:textColor="#632323"
+        android:textColor="#000000"
         android:textAlignment="center"
         android:textSize="35sp" />
 
@@ -45,6 +51,9 @@
         android:textColor="#FFFFFF"
         android:background="#2E9FD1"
         android:textSize="40sp" />
+
+
+
 
 
 

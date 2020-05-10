@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.taskapp.models.Task;
@@ -15,6 +16,8 @@ import com.example.taskapp.models.Task;
 public class FormActivity extends AppCompatActivity {
     private EditText editTitle;
     private EditText editDesc;
+   private  EditText editCount;
+      private Button button1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,15 +30,23 @@ public class FormActivity extends AppCompatActivity {
             getSupportActionBar().setTitle("New Task");
 
         }
+
+        editCount=findViewById(R.id.count);
         editTitle = findViewById(R.id.editTitle);
         editDesc = findViewById(R.id.editDesc);
+
+
+
     }
     public void save (View view) {
         String title = editTitle.getText().toString().trim();
         String desc = editDesc.getText().toString().trim();
+         String count= editCount.getText().toString().trim();
+
         Task task = new Task();
         task.setDesc(desc);
         task.setTitle(title);
+        task.setHow_are_you(count);
         Intent intent = new Intent();
         intent.putExtra("task", task);
         setResult(RESULT_OK, intent);
@@ -48,4 +59,6 @@ public class FormActivity extends AppCompatActivity {
         finish();
         return true;
     }
+
+
 }
