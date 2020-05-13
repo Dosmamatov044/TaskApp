@@ -1,10 +1,14 @@
 package com.example.taskapp;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.text.LineBreaker;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -26,6 +30,16 @@ public class FormActivity extends AppCompatActivity implements View.OnClickListe
     final String LOAD_TEXT = "load_text";
     Button button;
 
+
+
+
+
+
+
+
+
+
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +48,11 @@ public class FormActivity extends AppCompatActivity implements View.OnClickListe
         editDesc = findViewById(R.id.editDesc);
         button = findViewById(R.id.beka);
         loadText();
+
+
+
+
+
         task = (Task) getIntent().getSerializableExtra("task");
         if (task != null) {
             editTitle.setText(task.getTitle());

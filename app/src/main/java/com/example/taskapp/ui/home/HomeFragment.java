@@ -11,7 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 
-
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -35,8 +36,12 @@ import com.example.taskapp.models.Task;
 import java.util.ArrayList;
 import java.util.List;
 
+import static android.R.layout.simple_list_item_1;
+
 
 public class HomeFragment extends Fragment {
+
+    ListView listView;
 
     private RecyclerView recyclerView;
     private TaskAdapter adapter;
@@ -52,9 +57,33 @@ public class HomeFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_home, container, false);
         recyclerView = root.findViewById(R.id.recyclerView);
 
-initList();
+
+        initList();
+
+
+
+
+
+
+
+
+
+
+
 
         return root;
+    }
+
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+
+
+
+
+
     }
 
     private void initList() {
@@ -121,4 +150,25 @@ initList();
 
 
         }
-    }}
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+
