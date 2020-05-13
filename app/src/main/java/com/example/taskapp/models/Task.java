@@ -1,11 +1,24 @@
 package com.example.taskapp.models;
 
-import java.io.Serializable;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
+import java.io.Serializable;
+import java.util.Collection;
+
+
+@Entity
 public class Task implements Serializable {
+  @PrimaryKey(autoGenerate = true)
+  private  long id;
     private String title;
     private String desc;
     private  String How_are_you;
+
+
+
+    public Task() {
+    }
 
 
     public Task(String title, String desc, String how_are_you) {
@@ -13,6 +26,12 @@ public class Task implements Serializable {
         this.desc = desc;
        this.How_are_you = how_are_you;
     }
+
+    public Task(String title, String desc) {
+    this.title=title;
+    this.desc=desc;
+
+}
 
     public String getHow_are_you() {
 
@@ -23,7 +42,16 @@ public class Task implements Serializable {
         How_are_you = how_are_you;
     }
 
-    public Task() {
+
+
+
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getTitle() {
@@ -38,4 +66,7 @@ public class Task implements Serializable {
     public void setDesc(String desc) {
         this.desc = desc;
     }
+
+
+
 }

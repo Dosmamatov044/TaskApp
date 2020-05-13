@@ -27,6 +27,8 @@ import java.util.ArrayList;
 public class GalleryFragment extends Fragment {
   Adapter Adapter;
     public ArrayList<File> galleryList = new ArrayList<>();
+
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
@@ -41,6 +43,9 @@ public class GalleryFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         Adapter = new Adapter(galleryList);
         recyclerView.setAdapter(Adapter);
+
+
+
         getPermissions();
 
     }

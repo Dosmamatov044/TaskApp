@@ -52,7 +52,7 @@ public class Adapter extends RecyclerView.Adapter <Adapter.ViewHolder> {
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    onItemClickListener.onItemClick(getAdapterPosition());
+                    onItemClickListener.onItemClick(getLayoutPosition());
 
                 }
             });

@@ -1,4 +1,4 @@
-package com.example.taskapp.ui.home;
+/*package com.example.taskapp;
 
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
@@ -8,19 +8,25 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.taskapp.R;
 import com.example.taskapp.models.Task;
+import com.example.taskapp.ui.home.ViewHolder;
 
 import java.util.ArrayList;
 
 public class Adapter extends RecyclerView.Adapter<ViewHolder> {
     private ArrayList<Task> arrayList;
-    public Adapter() {
-        arrayList = new ArrayList<>();
+    public Adapter(ArrayList<Task> arrayList) {
+
+       this.arrayList=arrayList;
+
+        //  arrayList = new ArrayList<>();
     }
 
-    public void update(ArrayList<Task> list){
-        arrayList = list;
-        notifyDataSetChanged();
-    }
+
+
+    // public void update(ArrayList<Task> list){
+    //    arrayList = list;
+   //     notifyDataSetChanged();
+  //  }
 
     @NonNull
     @Override
@@ -37,4 +43,4 @@ public class Adapter extends RecyclerView.Adapter<ViewHolder> {
     public int getItemCount() {
         return arrayList.size();
     }
-}
+}*/

@@ -7,9 +7,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
-import android.widget.Button;
-import android.widget.ImageButton;
-import android.widget.ImageView;
+
 
 import com.example.taskapp.ui.onBoard.BoardFragment;
 import com.example.taskapp.ui.onBoard.OnBoardActivity;
@@ -27,11 +25,15 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+
+
+
 public class MainActivity extends AppCompatActivity {
 
 
 
     private AppBarConfiguration mAppBarConfiguration;
+
 
 
     @Override

@@ -6,11 +6,27 @@
     android:layout_height="match_parent"
     tools:context=".ui.home.HomeFragment">
 
+    <Button
+        android:id="@+id/dialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Диалог"
+        android:textSize="15dp"
+        android:textColor="#DC1313"
+        android:background="#000000"
+
+
+        />
+
+
+
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:listitem="@layout/list_task"
          />
+
 
 </LinearLayout>
