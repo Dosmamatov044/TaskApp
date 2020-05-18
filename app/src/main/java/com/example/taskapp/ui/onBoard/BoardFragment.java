@@ -54,28 +54,28 @@ public class BoardFragment extends Fragment {
         textTitle = view.findViewById(R.id.textTitle);
         textDesc = view.findViewById(R.id.textDesc);
         button = view.findViewById(R.id.button_Getstart);
-        color=view.findViewById(R.id.rr);
+     // color=view.findViewById(R.id.rr);
         ImageView image = view.findViewById(R.id.imageView);
         int pos = getArguments().getInt("pos");
         switch (pos){
             case 0:
 
 
-                image.setImageResource(R.drawable.oneph);
+             //   image.setImageResource(R.drawable.oneph);
                 textTitle.setText("Hi");
-                color.setBackgroundColor(Color.RED);
+          //  color.setBackgroundColor(Color.RED);
                 button.setVisibility(View.GONE);
                 break;
             case 1:
-                image.setImageResource(R.drawable.twoph);
+             //   image.setImageResource(R.drawable.twoph);
                 textTitle.setText("how are you");
                 ;
                 button.setVisibility(View.GONE);
                 break;
             case 2:
-                image.setImageResource(R.drawable.threeph);
+            //    image.setImageResource(R.drawable.threeph);
                 textTitle.setText("I am bad");
-                color.setBackgroundColor(333);
+            //  color.setBackgroundColor(333);
                 button.setVisibility(View.VISIBLE);
                 button.setOnClickListener(new View.OnClickListener() {
                     @Override

@@ -29,16 +29,6 @@ public class FormActivity extends AppCompatActivity implements View.OnClickListe
     final String SAVE_TEXT = "saved_text";
     final String LOAD_TEXT = "load_text";
     Button button;
-
-
-
-
-
-
-
-
-
-
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,9 +53,11 @@ public class FormActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         String title = editTitle.getText().toString().trim();
         String desc = editDesc.getText().toString().trim();
-//        boolean checked = checkBox.isChecked();
+
         if (TextUtils.isEmpty(title)) {
-            editTitle.setError("Заполните это поле");
+
+            //editTitle.animate().scaleY(1.5f).start();
+             editTitle.setError("Заполните это поле");
             return;
         }
         if (TextUtils.isEmpty(desc)) {

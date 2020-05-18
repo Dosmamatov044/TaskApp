@@ -44,8 +44,10 @@ public class HomeFragment extends Fragment {
     ListView listView;
 
     private RecyclerView recyclerView;
-    private TaskAdapter adapter;
+
     private List<Task> list = new ArrayList<>();
+    private TaskAdapter adapter;
+
     private int pos;
 
     Task task;
@@ -130,7 +132,16 @@ public class HomeFragment extends Fragment {
         });
     }
 
-
+    public void sortList(){
+        list.clear();
+        list.addAll(App.getInstance().getDatabase().taskDao().getAllsorted());
+        adapter.notifyDataSetChanged();
+    }
+    public void initialList(){
+        list.clear();
+        list.addAll(App.getInstance().getDatabase().taskDao().getAll());
+        adapter.notifyDataSetChanged();
+    }
 
 
 

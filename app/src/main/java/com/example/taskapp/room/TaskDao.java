@@ -6,6 +6,7 @@ import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
+import androidx.transition.Transition;
 
 import com.example.taskapp.models.Task;
 
@@ -16,7 +17,7 @@ import java.util.List;
     public interface TaskDao {
         @Query("SELECT * FROM task")
         List<Task> getAll();
-        @Query("SELECT * FROM task ORDER BY title ASC")
+        @Query("SELECT * FROM task ORDER BY title")
         List<Task> getAllsorted();
 
         @Insert
@@ -25,6 +26,11 @@ import java.util.List;
         void delete(Task task);
         @Update
         void update(Task task);
+
+
+
+
+
     }
 
 

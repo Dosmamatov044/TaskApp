@@ -12,4 +12,15 @@
         android:orderInCategory="110"
         android:title="exit"
         app:showAsAction="never" />
+
+
+    <item
+        android:id="@+id/action_sort"
+        android:orderInCategory="100"
+        android:title="Sort"
+        app:showAsAction="ifRoom" />
+    <!--    <item-->
+    <!--        android:id="@+id/"-->
+
+
 </menu>

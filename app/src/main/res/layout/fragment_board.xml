@@ -1,60 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rr"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="32dp"
-    android:orientation="vertical"
-    android:gravity="center_horizontal"
-    tools:context=".ui.onBoard.BoardFragment"
-
-    android:id="@+id/rr"
     android:background="@color/colorAccent"
+    android:gravity="center_horizontal"
 
-    >
+    android:orientation="vertical"
+    android:padding="32dp"
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="350dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="40dp"
-        android:src="@mipmap/ic_launcher"/>
+    tools:context=".ui.onBoard.BoardFragment">
+
+
+
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animation_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/delivery_man"/>
+
+
+    <Button
+        android:id="@+id/button_Getstart"
+        android:layout_width="199dp"
+        android:layout_height="38dp"
+        android:layout_below="@+id/animation_view"
+        android:layout_marginTop="-176dp"
+        android:background="#2E9FD1"
+        android:baselineAligned="false"
+        android:text="Get Started"
+        android:textColor="#FFFFFF"
+        android:textSize="10sp"
+        android:layout_centerHorizontal="true"
+
+        />
 
     <TextView
         android:id="@+id/textTitle"
-        android:textSize="40sp"
-        android:textColor="#EC0606"
-        android:textStyle="bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:layout_margin="5dp"
-        android:text="A girl"
         android:background="@color/colorAccent"
+        android:text="A girl"
+        android:textAlignment="center"
+        android:textColor="#EC0606"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:layout_alignParentTop="true"
+
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/animation_view"
+
+
         />
 
     <TextView
         android:id="@+id/textDesc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/animation_view"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="-294dp"
         android:text="Friend"
-        android:textColor="#000000"
+
+
         android:textAlignment="center"
-        android:textSize="35sp" />
-
-    <Button
-        android:id="@+id/button_Getstart"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Get Started"
-        android:textColor="#FFFFFF"
-        android:background="#2E9FD1"
-        android:textSize="40sp" />
+        android:textColor="#000000"
+        android:textSize="33sp" />
 
 
-
-
-
-
-</LinearLayout>
+</RelativeLayout>
