@@ -20,6 +20,11 @@ import java.util.List;
         @Query("SELECT * FROM task ORDER BY title")
         List<Task> getAllsorted();
 
+    @Query("SELECT * FROM task")
+    LiveData<List<Task>> getAllLive();
+
+
+
         @Insert
         void insert(Task task);
         @Delete
@@ -28,10 +33,7 @@ import java.util.List;
         void update(Task task);
 
 
-
-
-
-    }
+}
 
 
 

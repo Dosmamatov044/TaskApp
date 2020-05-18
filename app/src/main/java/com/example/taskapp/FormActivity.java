@@ -19,6 +19,13 @@ import android.widget.Toast;
 
 import com.example.taskapp.models.Task;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
 
 public class FormActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -29,6 +36,9 @@ public class FormActivity extends AppCompatActivity implements View.OnClickListe
     final String SAVE_TEXT = "saved_text";
     final String LOAD_TEXT = "load_text";
     Button button;
+
+
+
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,16 +64,18 @@ public class FormActivity extends AppCompatActivity implements View.OnClickListe
         String title = editTitle.getText().toString().trim();
         String desc = editDesc.getText().toString().trim();
 
-        if (TextUtils.isEmpty(title)) {
 
+
+
+
+              if (TextUtils.isEmpty(title)) {
             //editTitle.animate().scaleY(1.5f).start();
-             editTitle.setError("Заполните это поле");
-            return;
-        }
-        if (TextUtils.isEmpty(desc)) {
-            editDesc.setError("Заполните это поле");
-            return;
-        }
+             editTitle.setError("Заполните это поле");return; }
+
+              if (TextUtils.isEmpty(desc)) {
+            editDesc.setError("Заполните это поле");return;}
+
+
         if (task != null) {
             task.setTitle(title);
             task.setDesc(desc);
@@ -78,6 +90,11 @@ public class FormActivity extends AppCompatActivity implements View.OnClickListe
         setResult(RESULT_OK, intent);
         finish();
     }
+
+
+
+
+
     private void loadText() {
         preferences = getPreferences(MODE_PRIVATE);
         String savedText = preferences.getString(SAVE_TEXT, "");
@@ -101,6 +118,11 @@ public class FormActivity extends AppCompatActivity implements View.OnClickListe
         super.onDestroy();
         saveText();
     }
+
+
+
+
+
 }
 
 

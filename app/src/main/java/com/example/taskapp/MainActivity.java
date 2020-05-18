@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.media.Image;
 import android.os.Bundle;
 
+
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -111,15 +112,22 @@ public class MainActivity extends AppCompatActivity {
                     ((HomeFragment) navHostFragment.getChildFragmentManager().getFragments().get(0)).sortList();
                     sort = false;
 
+                }
 
 
-                } else {
+
+
+
+                else {
                     Fragment navHostFragment1 = getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment);
                     ((HomeFragment) navHostFragment1.getChildFragmentManager().getFragments().get(0)).initialList();
 
                     sort = true;
                 }
                 return true;
+
+
+
 
 
 
@@ -135,12 +143,12 @@ public class MainActivity extends AppCompatActivity {
                 || super.onSupportNavigateUp(); }
 
 
-                @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+              @Override
+   protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        Fragment fragment = getSupportFragmentManager()
+       Fragment fragment = getSupportFragmentManager()
 
-                .findFragmentById(R.id.nav_host_fragment);
+               .findFragmentById(R.id.nav_host_fragment);
         fragment.getChildFragmentManager().getFragments().get(0).onActivityResult(requestCode,resultCode,data); }
 
 
@@ -164,7 +172,6 @@ public class MainActivity extends AppCompatActivity {
     return sharedPreferences.getBoolean("isShown",false);
 
 }
-
 
 
 

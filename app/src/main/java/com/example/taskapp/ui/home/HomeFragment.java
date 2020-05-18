@@ -19,6 +19,7 @@ import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -34,6 +35,7 @@ import com.example.taskapp.models.Task;
 
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import static android.R.layout.simple_list_item_1;
@@ -41,7 +43,7 @@ import static android.R.layout.simple_list_item_1;
 
 public class HomeFragment extends Fragment {
 
-    ListView listView;
+
 
     private RecyclerView recyclerView;
 
@@ -82,7 +84,16 @@ public class HomeFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
 
-
+        list = new ArrayList<>();
+        App.getInstance().getDatabase().taskDao().getAllLive().observe(this, new Observer<List<Task>>() {
+            @Override
+            public void onChanged(final List<Task> tasks) {
+                list.clear();
+                list.addAll(tasks);
+                Collections.reverse(list);
+                adapter.notifyDataSetChanged();
+            }
+        });
 
 
 
@@ -132,6 +143,15 @@ public class HomeFragment extends Fragment {
         });
     }
 
+
+
+
+
+
+
+
+
+
     public void sortList(){
         list.clear();
         list.addAll(App.getInstance().getDatabase().taskDao().getAllsorted());
@@ -142,6 +162,10 @@ public class HomeFragment extends Fragment {
         list.addAll(App.getInstance().getDatabase().taskDao().getAll());
         adapter.notifyDataSetChanged();
     }
+
+
+
+
 
 
 
